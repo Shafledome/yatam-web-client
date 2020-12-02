@@ -7,7 +7,10 @@
 	```
 	npm install -g @vue/cli
 	```
-3. Open project folder.
+3. Open project folder and install all dependencies in node_modules in your local repository.
+	```
+	npm i
+	```
 
 ## Operations inside the project:
 
@@ -35,7 +38,18 @@ vue create [projectName]
 App.vue and main.js are the main files of the project. Other files are located in 'components' folder. 'assets' folder is for images and other static data.
 
 ## How to "Code" in the project:
-* Use *camelCase* or *kebab-case* for functions and variables.
+* Use *camelCase*, *kebab-case* or *PascalCase* for functions and variables (but don't mix them in the same file...)
 * Write the code in english.
 * Use Components Hierarchy.
+
+## Troubleshooting with Node.js and npm:
+Sometimes *npm* can cause problems... This is due to some possible incompatibilities between dependencies, so these are some of the possible solutions when npm fails:
+
+* Restart the terminal or the computer if you installed a new package.
+* Use *nvm* to change/install different Node.js versions. Some packages are incompatible with new node.js versions or hasn't been updated like node-sass (stylesheet preprocessor)
+* Delete node_modules folder inside a project and use:
+	```
+	npm i
+	```
+to reinstall all dependencies and Node.js modules.
 
