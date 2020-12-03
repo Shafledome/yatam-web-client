@@ -43,22 +43,6 @@ export default {
         schedule: String,
         url: String
     }
-    /* components: {
-
-    }
-    props: {
-        leisure: {type: Object, required: true}
-    },
-    computed: {
-        leisureLink() {
-            return {
-                name: "leisure",
-                params: {
-                    slug: this.leisure.slug
-                }
-            };
-        }
-    } */
 };
 </script>
 
