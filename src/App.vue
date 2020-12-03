@@ -1,11 +1,12 @@
 <template>
   <div id="app">
-    <Header />
+    <Hero />
+    <!-- <Header /> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <!-- delete below. Just for testing -->
     <!-- <LeisuresList /> -->
     <!-- <Map /> -->
-    <Footer />
+    <!-- <Footer /> -->
   </div>
 </template>
 
@@ -13,8 +14,9 @@
 // import HelloWorld from './components/HelloWorld.vue'
 // import LeisuresList from './components/LeisuresList.vue'
 // import Map from './components/Map.vue'
-import Footer from './components/Footer.vue'
-import Header from './components/Header.vue'
+// import Footer from './components/Footer.vue'
+// import Header from './components/Header.vue'
+import Hero from './components/Hero.vue'
 
 export default {
   name: 'App',
@@ -22,18 +24,33 @@ export default {
     // HelloWorld,
     // LeisuresList,
     // Map,
-    Footer,
-    Header
+    // Footer,
+    // Header
+    Hero
   }
 };
 </script>
 
-<style>
-  #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
+<style lang="scss">
+  html {
+    scroll-behavior: smooth;
   }
+
+  @import "~bulma/sass/utilities/_all";
+
+  $primary: #2196ba;
+  $dark: #062933;
+
+  $colors: (
+      "dark": ($dark, $dark-invert),
+      "primary": ($primary, $primary-invert)
+  );
+
+  $link: $primary;
+  $link-invert: $primary-invert;
+  $link-focus-border: $primary;
+
+  @import "~bulma";
+  @import "~buefy/src/scss/buefy"
+  
 </style>
