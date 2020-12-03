@@ -54,6 +54,19 @@ Sometimes *npm* can cause problems... This is due to some possible incompatibili
 to reinstall all dependencies and Node.js modules.
 
 ## Extra dependencies:
+Note: If you use:
+```
+npm i
+```
+Inside the folder, it will install all the new dependencies. 
+If you need a new one, just use the command:
+```
+npm install --save [dependencie]
+```
+And it will be added to the packages.json files. Later, just add it to the commit.
+
+Commands:
 ```
 npm install leaflet vue2-leaflet --save
+npm install --save axios
 ```
