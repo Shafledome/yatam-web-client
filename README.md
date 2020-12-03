@@ -69,4 +69,6 @@ Commands:
 ```
 npm install leaflet vue2-leaflet --save
 npm install --save axios
+npm install --save node-sass
+npm install --save buefy
 ```
