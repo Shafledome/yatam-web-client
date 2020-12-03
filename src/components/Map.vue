@@ -1,15 +1,6 @@
 <template>
 
   <div style="height: 500px; width: 100%">
-    <div style="height: 200px overflow: auto;">
-      <p>Center is at {{ currentCenter }} and the zoom is: {{ currentZoom }}</p>
-      <button @click="showLongText">
-        Toggle long popup
-      </button>
-      <button @click="showMap = !showMap">
-        Toggle map
-      </button>
-    </div>
     <l-map
       v-if="showMap"
       :zoom="zoom"
@@ -55,8 +46,9 @@
 import { latLng } from "leaflet";
 import { LMap, LTileLayer, LMarker, LPopup, LTooltip } from "vue2-leaflet";
 
+
 export default {
-  name: "Example",
+  name: "Map",
   components: {
     LMap,
     LTileLayer,
@@ -68,19 +60,36 @@ export default {
     return {
       zoom: 13,
       center: latLng(36.72016, -4.42034),
-      url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      url: 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png',
       attribution:
         '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-      withPopup: latLng(47.41322, -1.219482),
-      withTooltip: latLng(47.41422, -1.250482),
+      withPopup: latLng(36.72016, -4.42034),
+      withTooltip: latLng(36.72016, -4.42034),
       currentZoom: 11.5,
-      currentCenter: latLng(47.41322, -1.219482),
+      currentCenter: latLng(36.72016, -4.42034),
       showParagraph: false,
       mapOptions: {
         zoomSnap: 0.5
       },
       showMap: true
     };
+  },
+  created(){
+    if(!("geolocation" in navigator)) {
+      this.errorStr = 'Geolocation is not available.';
+      return;
+    }
+
+    this.gettingLocation = true;
+    // get position
+    navigator.geolocation.getCurrentPosition(pos => {
+      this.gettingLocation = false;
+      this.centerUpdate(pos);
+    }, err => {
+      this.gettingLocation = false;
+      this.errorStr = err.message;
+    })
+  
   },
   methods: {
     zoomUpdate(zoom) {
@@ -94,7 +103,8 @@ export default {
     },
     innerClick() {
       alert("Click!");
-    }
+    },
   }
 };
+
 </script>
