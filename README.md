@@ -53,3 +53,7 @@ Sometimes *npm* can cause problems... This is due to some possible incompatibili
 	```
 to reinstall all dependencies and Node.js modules.
 
+## Extra dependencies:
+```
+npm install leaflet vue2-leaflet --save
+```
