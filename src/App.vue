@@ -7,27 +7,29 @@
     <!-- delete below. Just for testing -->
     <!-- <LeisuresList /> -->
     <!-- <Map /> -->
+    <leisuresList />
     <Footer />
   </div>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
-// import LeisuresList from './components/LeisuresList.vue'
+import LeisuresList from './components/LeisuresList.vue'
 // import Map from './components/Map.vue'
 import Footer from './components/Footer.vue'
 import Hero from './components/Hero.vue'
+// import LeisurePreview from './components/LeisurePreview.vue';
 import Navbar from './components/Navbar.vue'
 
 export default {
   name: 'App',
   components: {
     // HelloWorld,
-    // LeisuresList,
     // Map,
     Footer,
     Hero,
-    Navbar
+    Navbar,
+    LeisuresList
   }
 };
 </script>
