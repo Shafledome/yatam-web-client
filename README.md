@@ -77,3 +77,19 @@ npm i --save @fortawesome/fontawesome-svg-core
 npm i --save @fortawesome/free-solid-svg-icons
 npm i --save @fortawesome/vue-fontawesome@latest
 ```
+## Error: System Limit for Number of File Watchers Reached
+This error is common since React/Angular/Vue hot-reloads and recompiles files on save it needs to keep track of all project's files. Increasing the inotify watch limit should hide the warning messages.
+
+* Linux solution:
+	```
+	nano /etc/sysctl.conf
+	```
+	You can use the text editor you want. You can use kate instead of nano. Add/edit this line:
+	```
+	fs.inotify.max_user_watches=524288
+	```
+	Restart your computer. Check if it has been updated with:
+	```
+	sudo sysctl -p
+	```
+	And now you can use npm run serve again.
