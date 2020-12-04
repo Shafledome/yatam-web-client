@@ -73,4 +73,7 @@ npm install --save node-sass
 npm install --save buefy
 npm install --save vue-particles
 npm install --save sass-loader
+npm i --save @fortawesome/fontawesome-svg-core
+npm i --save @fortawesome/free-solid-svg-icons
+npm i --save @fortawesome/vue-fontawesome@latest
 ```
