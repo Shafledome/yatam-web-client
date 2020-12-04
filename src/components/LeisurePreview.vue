@@ -1,32 +1,33 @@
 <template>
-    <div class="leisure-preview">
-        <div class="leisure">
-            <div class="box">
-                <article class="info">
-                    <div class="info-left">
-                        <div class="name" v-if="name !== null">
-                            <strong><p>{{ name }} </p></strong>
-                        </div>
-                        <div class="address" v-if="address !== null">
-                            <p>{{ address }} </p>
-                        </div>
-                        <div class="description" v-if="description !== null">
-                            <p>{{ description }} </p>
-                        </div>
-                        <div class="email" v-if="email !== null">
-                            <p>{{ email }} </p>
-                        </div>
-                        <div class="schedule" v-if="schedule !== null">
-                            <p>{{ schedule }} </p>
-                        </div>
-                        <div class="url" v-if="url !== null">
-                            <a href="url"><p>{{ url }}</p></a>
-                        </div>
-                    </div>
-                    <div class="info-right">
-                        <small><p>Read more...</p></small>
-                    </div>
-                </article>
+    <div class="card">
+        <div class="card-content">
+            <div class="media">
+                <div class="media-content">
+                    
+                        <p class="title is-4"> {{ name }} </p>
+                    
+                        <p class="subtitle is-6"> {{ address }} </p>
+                    
+                </div>
+            </div>
+
+            <div class="content">
+                
+                    <p>{{ description }} </p>
+                
+                
+                    <p>{{ email }} </p>
+                
+                
+                    <p>{{ schedule }} </p>
+                
+                
+                    <a href="url"><p>{{ url }}</p></a>
+                
+                
+                    <p> {{ type }} </p>   
+                
+                <br>
             </div>
         </div>
     </div>
@@ -38,6 +39,7 @@ export default {
     props: {
         name: String,
         address: String,
+        type: String,
         description: String,
         email: String,
         schedule: String,
@@ -47,6 +49,7 @@ export default {
 </script>
 
 <style>
+    /*
     .leisure-preview {
         display: inline-block;
         font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
@@ -100,5 +103,5 @@ export default {
         font-style: italic;
         line-height: 10px;
         float: right;
-    }
+    }*/
 </style>
