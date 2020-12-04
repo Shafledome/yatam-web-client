@@ -1,12 +1,13 @@
 <template>
   <div id="app">
+    <Navbar />
     <Hero />
     <!-- <Header /> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <!-- delete below. Just for testing -->
     <!-- <LeisuresList /> -->
     <!-- <Map /> -->
-    <!-- <Footer /> -->
+    <Footer />
   </div>
 </template>
 
@@ -14,9 +15,9 @@
 // import HelloWorld from './components/HelloWorld.vue'
 // import LeisuresList from './components/LeisuresList.vue'
 // import Map from './components/Map.vue'
-// import Footer from './components/Footer.vue'
-// import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
 import Hero from './components/Hero.vue'
+import Navbar from './components/Navbar.vue'
 
 export default {
   name: 'App',
@@ -24,9 +25,9 @@ export default {
     // HelloWorld,
     // LeisuresList,
     // Map,
-    // Footer,
-    // Header
-    Hero
+    Footer,
+    Hero,
+    Navbar
   }
 };
 </script>
@@ -38,8 +39,8 @@ export default {
 
   @import "~bulma/sass/utilities/_all";
 
-  $primary: #2196ba;
-  $dark: #062933;
+  $primary: #04c970;
+  $dark: #0a1b15;
 
   $colors: (
       "dark": ($dark, $dark-invert),
