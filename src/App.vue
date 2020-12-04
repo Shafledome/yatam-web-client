@@ -7,19 +7,20 @@
     <!-- delete below. Just for testing -->
     <!-- <LeisuresList /> -->
     <!-- <Map /> -->
-    <leisuresList />
+    <!-- <RatingsList /> -->
     <Footer />
   </div>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
-import LeisuresList from './components/LeisuresList.vue'
+//import LeisuresList from './components/LeisuresList.vue'
 // import Map from './components/Map.vue'
 import Footer from './components/Footer.vue'
 import Hero from './components/Hero.vue'
 // import LeisurePreview from './components/LeisurePreview.vue';
 import Navbar from './components/Navbar.vue'
+//import RatingsList from "./components/RatingsList";
 
 export default {
   name: 'App',
@@ -29,7 +30,8 @@ export default {
     Footer,
     Hero,
     Navbar,
-    LeisuresList
+    //RatingsList
+    //LeisuresList
   }
 };
 </script>
@@ -54,6 +56,6 @@ export default {
   $link-focus-border: $primary;
 
   @import "~bulma";
-  @import "~buefy/src/scss/buefy"
+  @import "~buefy/src/scss/buefy";
   
 </style>
