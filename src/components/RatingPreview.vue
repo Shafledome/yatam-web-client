@@ -38,12 +38,12 @@ export default {
   mounted() {
     if(this.bool == true){
       axios
-      .get('http://127.0.0.1:30006/users/user_key/' + this.user)
-      .then(response => (this.title = response.data.username))
+      .get('http://127.0.0.1:3000/leisures/id/' + this.leisure)
+      .then(response => (this.title = response.data.name))
     }else{
       axios
-      .get('http://127.0.0.1:30006/leisures/id/' + this.leisure)
-      .then(response => (this.title = response.data.name))
+      .get('http://127.0.0.1:30006/users/user_key/' + this.user)
+      .then(response => (this.title = response.data.username))
     }
     
   }
