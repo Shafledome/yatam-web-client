@@ -2,23 +2,18 @@
   <div id="app">
     <Navbar />
     <Hero />
-    <!-- <Header /> -->
-    <!-- delete below. Just for testing -->
-    <LeisuresList />
+    <Tabs />
     <!-- <Map /> -->
-    <!-- <RatingsList /> -->
-    <LeisureModal />
     <Footer />
   </div>
 </template>
 
 <script>
-import LeisuresList from './components/LeisuresList.vue'
 // import Map from './components/Map.vue'
 import Footer from './components/Footer.vue'
 import Hero from './components/Hero.vue'
 import Navbar from './components/Navbar.vue'
-import LeisureModal from './components/LeisureModal.vue'
+import Tabs from './components/Tabs.vue'
 
 export default {
   name: 'App',
@@ -27,9 +22,7 @@ export default {
     Footer,
     Hero,
     Navbar,
-    //RatingsList
-    LeisuresList,
-    LeisureModal
+    Tabs
   }
 };
 </script>

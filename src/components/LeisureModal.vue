@@ -1,6 +1,6 @@
 <template>
     <section>
-        <b-modal v-model="isActive" :width="640" scroll="keep" can-cancel="false">
+        <b-modal v-model="isActive" :width="640" scroll="keep" :can-cancel="false">
             <div class="card">
                 <div class="card-image">
                     <!-- <figure class="image is-4by3">
@@ -15,17 +15,22 @@
                             </figure> -->
                         </div>
                         <div class="media-content">
-                            <p class="title is-4">John Smith</p>
-                            <p class="subtitle is-6">@johnsmith</p>
+                            <p class="title is-4">{{ name }}</p>
+                            <p class="subtitle is-6">{{ address }}</p>
                         </div>
                     </div>
 
                     <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                        <a>#css</a> <a>#responsive</a>
+                        <p> {{ description }} </p>
                         <br>
-                        <small>11:09 PM - 1 Jan 2016</small>
+                        <p> {{ email }} </p>
+                        <p> {{ schedule }} </p>
+                        <a :href="url">{{ url }} </a>
+                        <br>
+                        <small> {{ type }} </small>
+                        <RatingsList v-bind:data="null"
+                                v-bind:user="false"
+                                v-bind:idLeisure="id" />
                     </div>
                 </div>
             </div>
@@ -34,9 +39,22 @@
 </template>
 
 <script>
+import RatingsList from './RatingsList.vue'
+
     export default {
         props: {
-            isActive: Boolean
+            isActive: Boolean,
+            id: Number,
+            name: String,
+            address: String,
+            type: String,
+            description: String,
+            email: String,
+            schedule: String,
+            url: String
+        },
+        components: {
+            RatingsList
         }
     }
 </script>

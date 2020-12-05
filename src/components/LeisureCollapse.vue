@@ -87,7 +87,7 @@ export default {
         }
     },
     mounted() {
-        var url = 'http://127.0.0.1:30006/leisures/';
+        var url = 'http://127.0.0.1:30007/leisures/';
         url = url + this.typeLeisure;
         axios
         .get(url)
