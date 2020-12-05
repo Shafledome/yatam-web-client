@@ -32,7 +32,7 @@ export default {
     },
     mounted() {
         axios
-        .get('http://127.0.0.1:30006/events/all')
+        .get('http://127.0.0.1:30007/events/all')
         .then(response => (this.events = response.data))
     },
 }

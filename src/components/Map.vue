@@ -189,7 +189,7 @@ export default {
       }),
     };
   },
-  created(){
+  mounted() {
     if(!("geolocation" in navigator)) {
       this.errorStr = 'Geolocation is not available.';
       return;
@@ -217,36 +217,36 @@ export default {
       alert("Click!");
     },
   },
-  mounted(){
+  created(){
     axios
-        .get('http://127.0.0.1:30006/leisures/museum')
+        .get('http://127.0.0.1:30007/leisures/museum')
         .then(response => (this.museum = response.data))
     axios
-        .get('http://127.0.0.1:30006/leisures/artgallery')
+        .get('http://127.0.0.1:30007/leisures/artgallery')
         .then(response => (this.artGallery = response.data))
   
     axios
-        .get('http://127.0.0.1:30006/leisures/dogpark')
+        .get('http://127.0.0.1:30007/leisures/dogpark')
         .then(response => (this.dogPark = response.data))
 
     axios
-        .get('http://127.0.0.1:30006/leisures/monument')
+        .get('http://127.0.0.1:30007/leisures/monument')
         .then(response => (this.monument = response.data))
 
     axios
-        .get('http://127.0.0.1:30006/leisures/training')
+        .get('http://127.0.0.1:30007/leisures/training')
         .then(response => (this.training = response.data))
     
     axios
-        .get('http://127.0.0.1:30006/leisures/library')
+        .get('http://127.0.0.1:30007/leisures/library')
         .then(response => (this.library = response.data))
     
     axios
-        .get('http://127.0.0.1:30006/leisures/cinema')
+        .get('http://127.0.0.1:30007/leisures/cinema')
         .then(response => (this.cinema = response.data))
     
     axios
-        .get('http://127.0.0.1:30006/leisures/theater')
+        .get('http://127.0.0.1:30007/leisures/theater')
         .then(response => (this.theater = response.data))
   }
 

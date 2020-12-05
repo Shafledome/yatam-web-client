@@ -6,7 +6,8 @@
             </b-tab-item>
 
             <b-tab-item label="Map">
-                <Map />
+                <Map 
+                    :preferCanvas="true"/>
             </b-tab-item>
             <b-tab-item label="Events 2020">
                 <EventsList />
