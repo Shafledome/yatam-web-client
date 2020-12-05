@@ -19,6 +19,9 @@
             </b-navbar-item>
         </template>
         <template slot="end">
+            <b-navbar-item>
+              <CurrentWeather />
+            </b-navbar-item>
             <b-navbar-item href="#MyProfile">
                 <b-button class ="button" type="is-dark" outlined>
                     <span class="icon is-small" style="margin-right: 5px;">
@@ -36,6 +39,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { dom } from '@fortawesome/fontawesome-svg-core'
+import CurrentWeather from "./CurrentWeather";
 
 dom.watch()
 
@@ -43,7 +47,8 @@ library.add(faUser)
 library.add(faGithub)
 
     export default {
-        name: "NavBar"
+        name: "NavBar",
+      components: {CurrentWeather}
     }
 </script>
 

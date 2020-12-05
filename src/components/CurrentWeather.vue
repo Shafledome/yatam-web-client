@@ -1,24 +1,22 @@
 <template>
   <div class="currentWeather">
-    <div class="box">
-      <article class="media">
-        <div class="media-left">
-          <figure class="image is-64x64">
-            <img src="../assets/clear.svg" alt="Image">
-            <!-- TODO hacer imagen dinámica -->
-          </figure>
-        </div>
-        <div class="media-content">
-          <div class="content">
-            <p>
-              <strong>{{ temp }}ºC </strong> Sensación {{ feels_like }}ºC
-              <br>
-              <small>Precipitación {{ precipitation }}mm/hr <br> Humedad {{humidity}}% <br> Viento {{ wind_speed }}m/s</small>
-            </p>
-          </div>
-        </div>
-      </article>
-    </div>
+    <b-dropdown position="is-bottom-left" append-to-body aria-role="menu" trap-focus>
+      <a
+          class="navbar-item"
+          slot="trigger"
+          role="button">
+        <figure class="image is-24x24">
+          <img :src="getImage(weather_code)" alt="Image" style="margin-left: -10px">
+        </figure>
+        <span> {{ temp }} ºC <small>Sensación {{ feels_like }} ºC</small></span>
+      </a>
+
+      <b-dropdown-item
+          aria-role="menu-item"
+          :focusable="false">
+        <p> Precipitación {{ precipitation }}mm/hr <br> Humedad {{humidity}}% <br> Viento {{ wind_speed }}m/s</p>
+      </b-dropdown-item>
+    </b-dropdown>
   </div>
 </template>
 
@@ -30,12 +28,18 @@ export default {
   //RANDOM DATA TO TEST, CHANGE TO NULL WHEN REAL-USE SCENARIO
   data() {
     return {
-      temp: 45,
-      feels_like: 55,
-      precipitation: 66,
-      humidity: 0,
-      wind_speed: 66,
-      weather_code: null
+      temp: 8,
+      feels_like: 8,
+      precipitation: 8,
+      humidity: 8,
+      wind_speed: 8,
+      weather_code: 'rain'
+    }
+  },
+  methods: {
+    getImage(path){
+      var images = require.context('../assets/')
+      return images('./' + path + ".svg")
     }
   },
   //UNCOMMENT ONLY WHEN TESTING REAL-USE SCENARIO SO NOT TO REACH THE MAXIMUM LIMIT OF REQUESTS. IF UNCOMMENTED, REMEMBER TO CHANGE RETURN VALUES TO NULL.
@@ -50,6 +54,6 @@ export default {
 <style>
 .currentWeather {
   margin: auto;
-  max-width: 500px;
+  max-width: 300px;
 }
 </style>
