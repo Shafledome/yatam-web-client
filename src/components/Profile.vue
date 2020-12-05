@@ -7,12 +7,12 @@
         <div class="column is-one-fifth"></div>
         <div class="column is-one-fifth">
             <br>
-            <p class="title is-4" style="color:#04c970;">Trophies</p>
+            <!-- <p class="title is-4" style="color:#04c970;">Trophies</p> -->
             <TrophyList v-bind:user="key"></TrophyList> 
         </div>
         <div class="column">
             <br>
-            <h3 class="title is-4" style="color:#04c970">Reviews</h3>
+            <!-- <h3 class="title is-4" style="color:#04c970">Reviews</h3> -->
             <RatingsList v-bind:data="key"
                         v-bind:user=true></RatingsList>
         </div>

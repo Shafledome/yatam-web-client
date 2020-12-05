@@ -1,6 +1,7 @@
 <template>
   <div class="ratings-list">
     <div class="column">
+      <h3 class="title is-5" style="color:000">Reviews</h3>
       <RatingPreview v-for="rating in ratings"
                       v-bind:key="rating.id"
                       v-bind:user="rating.user"
