@@ -15,13 +15,15 @@
                 
                     <p>{{ description }} </p>
                 
+                    <p>{{ type }} </p>
+
+                    <p>{{ recipient }} </p>
                 
                     <p>{{ email }} </p>
                 
+                    <p>Start date: {{ initDate }} </p>
                 
-                    <p>{{ initDate }} </p>
-                
-                    <p> {{  endDate }} </p> 
+                    <p>End date: {{  endDate }} </p> 
 
                     <a href="url"><p>{{ url }}</p></a>
                 
@@ -45,6 +47,7 @@ export default {
         initDate: String,
         url: String,
         endDate: String,
+        type: String
     }
 };
 </script>

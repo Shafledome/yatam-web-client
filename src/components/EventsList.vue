@@ -27,8 +27,7 @@ export default {
     },
     data() {
         return {
-            events: null,
-            selectedType: '',
+            events: null
         }
     },
     mounted() {
@@ -36,18 +35,6 @@ export default {
         .get('http://127.0.0.1:30006/events/all')
         .then(response => (this.events = response.data))
     },
-    methods: {
-        filteredProducts() {
-
-                if(this.selectedType === '') {
-                    return this.events;
-                } else {
-                    const category = this.selectedType;
-                    return this.Products
-                               .filter((event) => event.CATEGORIA === category)
-                }
-            }
-    }
 }
 </script>
 

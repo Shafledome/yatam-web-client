@@ -133,10 +133,9 @@ export default {
   },
   data() {
     return {
-      zoom: 13,
+      zoom: 14.5,
       center: latLng(36.72016, -4.42034),
       url: 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png',
-      currentZoom: 11.5,
       mapOptions: {
         zoomSnap: 0.5
       },
