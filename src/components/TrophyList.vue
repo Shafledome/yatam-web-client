@@ -1,6 +1,7 @@
 <template>
   <div class="trophy-list">
     <div class="column">
+      <h3 class="title is-5" style="color:000">Trophies</h3>
       <TrophyPreview v-for="trophy in trophies"
                       v-bind:key="trophy.id"
                       v-bind:user="trophy.user"
