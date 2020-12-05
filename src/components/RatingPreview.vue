@@ -38,7 +38,7 @@ export default {
   mounted() {
     if(this.bool == true){
       axios
-      .get('http://127.0.0.1:3000/leisures/id/' + this.leisure)
+      .get('http://127.0.0.1:30007/leisures/id/' + this.leisure)
       .then(response => (this.title = response.data.name))
     }else{
       axios
