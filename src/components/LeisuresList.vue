@@ -1,87 +1,67 @@
 <template>
-    <div class="leisures-list">
-        <div class="column">
-            <!-- needs a function to select leisure type -->
-            <LeisurePreview v-for="leisure in artGallery"
-                v-bind:key="leisure.id"
-                v-bind:name="leisure.name"
-                v-bind:address="leisure.address"
-                v-bind:description="leisure.description"
-                v-bind:email="leisure.email"
-                v-bind:schedule="leisure.schedule"
-                v-bind:url="leisure.url"
-            ></LeisurePreview>
-        </div>
-        <!-- ToDo: Anyadir tipo en las tarjetas y cabecera con el tipo de ocio -->
-    </div>
+    <section>
+        <!-- <div class="block">
+            <b-switch v-model="showBooks"> Show Books item </b-switch>
+        </div> -->
+        <b-tabs class="table" v-model="activeTab">
+            <b-tab-item label="Leisures">
+                <LeisureCollapse v-bind:typeLeisure="'artgallery'" />
+                <LeisureCollapse v-bind:typeLeisure="'cinema'" />
+                <LeisureCollapse v-bind:typeLeisure="'dogpark'" />
+                <LeisureCollapse v-bind:typeLeisure="'library'" />
+                <LeisureCollapse v-bind:typeLeisure="'monument'" />
+                <LeisureCollapse v-bind:typeLeisure="'museum'" />
+                <LeisureCollapse v-bind:typeLeisure="'theater'" />
+                <LeisureCollapse v-bind:typeLeisure="'training'" />
+            </b-tab-item>
+
+            <b-tab-item label="Music">
+                Lorem <br>
+                ipsum <br>
+                dolor <br>
+                sit <br>
+                amet.
+            </b-tab-item>
+
+            <b-tab-item :visible="showBooks" label="Books">
+                What light is light, if Silvia be not seen? <br>
+                What joy is joy, if Silvia be not by— <br>
+                Unless it be to think that she is by <br>
+                And feed upon the shadow of perfection? <br>
+                Except I be by Silvia in the night, <br>
+                There is no music in the nightingale.
+            </b-tab-item>
+
+            <b-tab-item label="Videos" disabled>
+                Nunc nec velit nec libero vestibulum eleifend.
+                Curabitur pulvinar congue luctus.
+                Nullam hendrerit iaculis augue vitae ornare.
+                Maecenas vehicula pulvinar tellus, id sodales felis lobortis eget.
+            </b-tab-item>
+        </b-tabs>
+    </section>
 </template>
 
 <script>
-import axios from "axios";
-import LeisurePreview from './LeisurePreview'
-
-export default {
-    name: "LeisuresList",
-    components: {
-        LeisurePreview
-    },
-    data() {
-        return {
-            artGallery: null,
-            cinema: null,
-            dogpark: null,
-            library: null,
-            monument: null,
-            museum: null,
-            theater: null,
-            training: null
+    import LeisureCollapse from './LeisureCollapse.vue'
+    export default {
+        data() {
+            return {
+                activeTab: 0,
+                showBooks: false
+            }
+        },
+        components: {
+            LeisureCollapse
         }
-    },
-    mounted() {
-        axios
-        .get('http://127.0.0.1:30006/leisures/artgallery')
-        .then(response => (this.artGallery = response.data))
-
-        axios
-        .get('http://127.0.0.1:30006/leisures/cinema')
-        .then(response => (this.cinema = response.data))
-
-        axios
-        .get('http://127.0.0.1:30006/leisures/dogpark')
-        .then(response => (this.dogpark = response.data))
-
-        axios
-        .get('http://127.0.0.1:30006/leisures/library')
-        .then(response => (this.library = response.data))
-
-        axios
-        .get('http://127.0.0.1:30006/leisures/monument')
-        .then(response => (this.monument = response.data))
-
-        axios
-        .get('http://127.0.0.1:30006/leisures/museum')
-        .then(response => (this.museum = response.data))
-
-        axios
-        .get('http://127.0.0.1:30006/leisures/theater')
-        .then(response => (this.theater = response.data))
-
-        axios
-        .get('http://127.0.0.1:30006/leisures/training')
-        .then(response => (this.training = response.data))
     }
-}
 </script>
-
 <style>
-    html {
-        height: 100%;
-        padding-top: 10px;
-        background: #e6ecf1;
+    .table {
+        background: #0a1b15;
     }
 
-    .leisures-list {
-        margin: auto;
-        max-width: 900px;
+    label {
+        color: #fff;
     }
 </style>

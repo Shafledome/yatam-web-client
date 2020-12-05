@@ -3,9 +3,8 @@
     <Navbar />
     <Hero />
     <!-- <Header /> -->
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <!-- delete below. Just for testing -->
-    <!-- <LeisuresList /> -->
+    <LeisuresList />
     <!-- <Map /> -->
     <!-- <RatingsList /> -->
     <Footer />
@@ -13,25 +12,21 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-//import LeisuresList from './components/LeisuresList.vue'
+import LeisuresList from './components/LeisuresList.vue'
 // import Map from './components/Map.vue'
 import Footer from './components/Footer.vue'
 import Hero from './components/Hero.vue'
-// import LeisurePreview from './components/LeisurePreview.vue';
 import Navbar from './components/Navbar.vue'
-//import RatingsList from "./components/RatingsList";
 
 export default {
   name: 'App',
   components: {
-    // HelloWorld,
     // Map,
     Footer,
     Hero,
     Navbar,
     //RatingsList
-    //LeisuresList
+    LeisuresList
   }
 };
 </script>
@@ -45,6 +40,13 @@ export default {
 
   $primary: #04c970;
   $dark: #0a1b15;
+  $tabs-link-color: #fff;
+  $tabs-link-hover-color: #888;
+  $footer-background-color: #0a1b15;
+  $footer-color: #04c970;
+  $card-header-color: #fff;
+  $card-background-color: #04c970;
+  $card-content-background-color: #fff;
 
   $colors: (
       "dark": ($dark, $dark-invert),

@@ -1,5 +1,5 @@
 <template>
-    <b-navbar fixed-top="" id="navbar">
+    <b-navbar fixed-top="" class="navbar" v-bind:shadow="true">
         <template slot="start">
             <b-navbar-item href="https://github.com/Shafledome/yatam-web-client">
                 <b-button class ="button" type="is-dark" outlined>
@@ -50,7 +50,7 @@ library.add(faGithub)
 <style>
     .button {
         color: #0a1b15 !important;
-		transition: 400ms all;
+		transition: 200ms all;
         float: right;
     }
     .button:hover {
