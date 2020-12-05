@@ -7,6 +7,7 @@
                       v-bind:leisure="rating.leisure"
                       v-bind:grade="rating.grade"
                       v-bind:text="rating.text"
+                      v-bind:bool="user"
       ></RatingPreview>
       <!-- TODO change user and leisure id's for their respective names-->
     </div>
@@ -22,15 +23,26 @@ export default {
   components: {
     RatingPreview
   },
+  props: {
+    data: String,
+    user: Boolean
+  },
   data() {
     return {
       ratings: null
     }
   },
   mounted() {
-    axios
-    .get('http://127.0.0.1:30006/ratings/user/-MMrFIxsvyD4yYS-q1wH')
-    .then(response => (this.ratings = response.data))
+    if(this.user == true){
+      axios
+      .get('http://127.0.0.1:30006/ratings/user/' + this.data)
+      .then(response => (this.ratings = response.data))
+    }else{
+      axios
+      .get('http://127.0.0.1:30006/ratings/leisure/' + this.leisure)
+      .then(response => (this.ratings = response.data))
+    }
+    
   }
   //TODO change url depending of search by user or leisure and the needed id
 }
