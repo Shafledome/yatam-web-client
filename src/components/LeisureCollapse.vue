@@ -98,7 +98,6 @@ export default {
 
 <style>
     .card-header {
-        background: #04c970;
         transition: 200ms all;
     }
 
@@ -111,9 +110,6 @@ export default {
     }
 
     .card-header-title {
-        justify-content: center;
-        align-items: center;
-        color: #fff;
         transition: 200ms all;
     }
 </style>
