@@ -1,18 +1,20 @@
 <template>
-  <div class="box">
-    <article class="media">
-      <div class="media-content">
-        <div class="content">
-          <p>
-            <strong>{{ user }}</strong> <small>{{leisure}}</small>
-            <br>
-            <br>
-            <b-rate v-model="grade" icon-pack="fas" disabled="true"></b-rate>
-            {{ text }}
-          </p>
+  <div class="ratingPreview">
+    <div class="box">
+      <article class="media">
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>{{ user }}</strong> <small>{{leisure}}</small>
+              <br>
+              <br>
+              <b-rate v-model="grade" icon-pack="fas" disabled="true"></b-rate>
+              {{ text }}
+            </p>
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
+    </div>
   </div>
 </template>
 
@@ -29,7 +31,7 @@ export default {
 </script>
 
 <style>
-.box {
+.ratingPreview {
   margin: auto;
   max-width: 900px;
 }
