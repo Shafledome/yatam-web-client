@@ -21,6 +21,14 @@
 <script>
 import axios from "axios";
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
+import { dom } from '@fortawesome/fontawesome-svg-core'
+
+dom.watch()
+
+library.add(faStar)
+
 export default {
   name: "RatingPreview",
   props: {
@@ -45,7 +53,7 @@ export default {
       .get('http://127.0.0.1:30006/users/user_key/' + this.user)
       .then(response => (this.title = response.data.username))
     }
-    
+
   }
 };
 </script>
