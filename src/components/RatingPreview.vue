@@ -6,8 +6,8 @@
           <p>
             <strong>{{ user }}</strong> <small>{{leisure}}</small>
             <br>
-            <small>{{ grade }}</small>
             <br>
+            <b-rate v-model="grade" icon-pack="fas" disabled="true"></b-rate>
             {{ text }}
           </p>
         </div>
@@ -29,5 +29,8 @@ export default {
 </script>
 
 <style>
-
+.box {
+  margin: auto;
+  max-width: 900px;
+}
 </style>
