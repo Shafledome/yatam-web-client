@@ -2,21 +2,18 @@
   <div id="app">
     <Navbar />
     <Hero />
-    <!-- <Header /> -->
-    <!-- delete below. Just for testing -->
-    <LeisuresList />
+    <Tabs />
     <!-- <Map /> -->
-    <!-- <RatingsList /> -->
     <Footer />
   </div>
 </template>
 
 <script>
-import LeisuresList from './components/LeisuresList.vue'
 // import Map from './components/Map.vue'
 import Footer from './components/Footer.vue'
 import Hero from './components/Hero.vue'
 import Navbar from './components/Navbar.vue'
+import Tabs from './components/Tabs.vue'
 
 export default {
   name: 'App',
@@ -25,8 +22,7 @@ export default {
     Footer,
     Hero,
     Navbar,
-    //RatingsList
-    LeisuresList
+    Tabs
   }
 };
 </script>
@@ -42,11 +38,10 @@ export default {
   $dark: #0a1b15;
   $tabs-link-color: #fff;
   $tabs-link-hover-color: #888;
-  $footer-background-color: #0a1b15;
-  $footer-color: #04c970;
   $card-header-color: #fff;
-  $card-background-color: #04c970;
-  $card-content-background-color: #fff;
+  $card-header-background-color: #04c970;
+  $card-background-color: #fff;
+  $table-background-color: #0a1b15;
 
   $colors: (
       "dark": ($dark, $dark-invert),

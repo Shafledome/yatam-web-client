@@ -2,9 +2,10 @@
   <div class="box">
     <article class="media">
       <div class="media-content">
-        <div class="content">
+        <div class="content" style="text-align:center;">
           <p>
-            <strong>{{ trophy_name }}</strong> <small>{{ date }}</small>
+            <strong>{{ trophy_name }}</strong> <br>
+            <small>{{ date }}</small>
           </p>
         </div>
       </div>

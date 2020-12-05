@@ -87,7 +87,7 @@ export default {
         }
     },
     mounted() {
-        var url = 'http://127.0.0.1:30006/leisures/';
+        var url = 'http://127.0.0.1:30007/leisures/';
         url = url + this.typeLeisure;
         axios
         .get(url)
@@ -98,7 +98,6 @@ export default {
 
 <style>
     .card-header {
-        background: #04c970;
         transition: 200ms all;
     }
 
@@ -111,9 +110,6 @@ export default {
     }
 
     .card-header-title {
-        justify-content: center;
-        align-items: center;
-        color: #fff;
         transition: 200ms all;
     }
 </style>

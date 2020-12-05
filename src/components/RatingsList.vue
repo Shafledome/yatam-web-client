@@ -1,6 +1,7 @@
 <template>
   <div class="ratings-list">
     <div class="column">
+      <h3 class="title is-5" style="color:000">Reviews</h3>
       <RatingPreview v-for="rating in ratings"
                       v-bind:key="rating.id"
                       v-bind:user="rating.user"
@@ -25,7 +26,8 @@ export default {
   },
   props: {
     data: String,
-    user: Boolean
+    user: Boolean,
+    idLeisure: Number
   },
   data() {
     return {
@@ -33,13 +35,18 @@ export default {
     }
   },
   mounted() {
+    var url1 = 'http://127.0.0.1:30006/ratings/user/'
+    url1 = url1 + this.data;
+    var url2 = 'http://127.0.0.1:30006/ratings/leisure/'
+    url2 = url2 + this.idLeisure;
     if(this.user == true){
       axios
-      .get('http://127.0.0.1:30006/ratings/user/' + this.data)
+      .get(url1)
       .then(response => (this.ratings = response.data))
     }else{
+      console.log(url2)
       axios
-      .get('http://127.0.0.1:30006/ratings/leisure/' + this.leisure)
+      .get(url2)
       .then(response => (this.ratings = response.data))
     }
     

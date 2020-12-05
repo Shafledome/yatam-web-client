@@ -1,33 +1,41 @@
 <template>
     <section>
-        <h1>My Profile</h1>
-        <div v-if="!edit">
-            <b-field label="Email">
-                <b-input v-model="mail" disabled></b-input>
-            </b-field>
+        <div class="columns">
+            <div div class="column is-one-fifth" />
+            <div class="column" v-if="!edit">
+                <br>
+                <h1 class="title is-4">My Profile</h1>
 
-            <b-field label="Username">
-                <b-input v-model="username" disabled></b-input>
-            </b-field>
+                <b-field label="Email">
+                    <b-input v-model="mail" disabled></b-input>
+                </b-field>
 
-            <button @click="changeToEdit">Editar</button>
+                <b-field label="Username">
+                    <b-input v-model="username" disabled></b-input>
+                </b-field>
+
+                <button @click="changeToEdit" style="float:right">Editar</button><br><br>
+            </div>
+            <div class ="column" v-else>
+                <br>
+                <h1 class="title is-4">My Profile</h1>
+
+                <b-field label="Email">
+                    <b-input v-model="mail" disabled></b-input>
+                </b-field>
+
+                <b-field label="Username">
+                    <b-input v-model="username"></b-input>
+                </b-field>
+
+                <b-field label="Password">
+                    <b-input v-model="password"></b-input>
+                </b-field>
+
+                <button @click="saveChanges" style="float:right">Guardar cambios</button><br><br>
+            </div>
+            <div div class="column is-one-fifth" />
         </div>
-        <div v-else>
-            <b-field label="Email">
-                <b-input v-model="mail" disabled></b-input>
-            </b-field>
-
-            <b-field label="Username">
-                <b-input v-model="username"></b-input>
-            </b-field>
-
-            <b-field label="Password">
-                <b-input v-model="password"></b-input>
-            </b-field>
-
-            <button @click="saveChanges">Guardar cambios</button>
-        </div>
-
     </section>
 </template>
 
