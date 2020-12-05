@@ -1,7 +1,15 @@
 <template>
     <div class="card">
-        <a v-on:click="openModal()">
-            <LeisureModal v-bind:isActive="isActive" />
+        <div v-on:click="openModal()">
+            <LeisureModal 
+                    v-bind:isActive="isActive" 
+                    v-bind:id="id"
+                    v-bind:name="name"
+                    v-bind:address="address"
+                    v-bind:description="description"
+                    v-bind:email="email"
+                    v-bind:schedule="schedule"
+                    v-bind:url="url"/>
             <div class="full-info">
                 <div class="card-content">
                     <div class="media">
@@ -15,13 +23,13 @@
                             <p>{{ description }} </p>
                             <p>{{ email }} </p>
                             <p>{{ schedule }} </p>
-                            <a href="url">{{ url }}</a>
+                            <a :href="url">{{ url }}</a>
                             <p> {{ type }} </p>
                         <br>
                     </div>
                 </div>
             </div>
-        </a>
+        </div>
     </div>
 </template>
 

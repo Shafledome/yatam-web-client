@@ -41,7 +41,6 @@ export default {
     props: {
         name: String,
         address: String,
-        type: String,
         description: String,
         email: String,
         initDate: String,
