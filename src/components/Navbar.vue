@@ -23,11 +23,10 @@
               <CurrentWeather />
             </b-navbar-item>
             <b-navbar-item>
-                <b-button class ="button" type="is-dark" outlined>
+                <b-button v-on:click="showPrivate" class ="button" type="is-dark" outlined>
                     <span class="icon is-small" style="margin-right: 5px;">
                         <i class="fas fa-sm fa-user"></i>
                     </span>
-                    <router-link to="/login/">My Profile</router-link>
                 </b-button>
             </b-navbar-item>
         </template>
@@ -39,17 +38,23 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { dom } from '@fortawesome/fontawesome-svg-core'
-import CurrentWeather from "./CurrentWeather";
+import CurrentWeather from "./CurrentWeather"
+import {router} from '../main.js'
 
 dom.watch()
 
 library.add(faUser)
 library.add(faGithub)
 
-    export default {
-        name: "NavBar",
-        components: {CurrentWeather}
+export default {
+    name: "NavBar",
+    components: {CurrentWeather},
+    methods: {
+        showPrivate(){
+            router.push({ name: 'private', params: { key: '-MMrFIxsvyD4yYS-q1wH' }})
+        }
     }
+}
 </script>
 
 <style>

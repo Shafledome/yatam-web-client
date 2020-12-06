@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VueRouter from 'vue-router'
 import Home from './components/Home.vue'
 import Login from './components/Login.vue'
+import PrivateProfile from './components/PrivateProfile.vue'
 
 export {router}
 
@@ -23,6 +24,7 @@ const router = new VueRouter({
   routes: [
       { path: '/home/',name: 'home', component: Home },
       { path: '/login/',name: 'login', component: Login },
+      { path: '/private/:key',name: 'private', component: PrivateProfile, props: true}
   ]
 })
 
