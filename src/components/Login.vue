@@ -70,7 +70,7 @@
                                    this.userKey = Object.keys(this.dict)[0]));
                 setTimeout(() => { 
                     if(this.password == this.passwordData ) {
-                        router.push({ name: 'home', params: {key: this.userKey}})
+                        router.push({ name: 'home', params: {id: this.userKey}})
                     } else {
                         this.error = true;
                 }}, 750);

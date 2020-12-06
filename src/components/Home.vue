@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Navbar v-bind:userKey="key"/>
+    <Navbar v-bind:userKey="id"/>
     <Hero />
     <Tabs />
     <Footer />
@@ -23,7 +23,7 @@ export default {
     },
 
     props: {
-      key: String,
+      id: String,
     }
 };
 </script>

@@ -1,34 +1,38 @@
 <template>
-    <div class="card">
-        <div v-on:click="openModal()">
-            <LeisureModal 
-                    v-bind:isActive="isActive" 
+    <div class="cardmodal">
+        <LeisureModal 
+                    v-bind:isActive="isActive"
                     v-bind:id="id"
                     v-bind:name="name"
                     v-bind:address="address"
                     v-bind:description="description"
                     v-bind:email="email"
                     v-bind:schedule="schedule"
-                    v-bind:url="url"/>
-            <div class="full-info">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-content">
-                                <p class="title is-4"> {{ name }} </p>
-                                <p class="subtitle is-6"> {{ address }} </p>
+                    v-bind:url="url"
+                    @close="isActive = false"
+                    />
+        <div class="card">
+            <a v-on:click="isActive = true">
+                <div class="full-info">
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-content">
+                                    <p class="title is-4"> {{ name }} </p>
+                                    <p class="subtitle is-6"> {{ address }} </p>
+                            </div>
+                        </div>
+
+                        <div class="content">
+                                <p>{{ description }} </p>
+                                <p>{{ email }} </p>
+                                <p>{{ schedule }} </p>
+                                <a :href="url">{{ url }}</a>
+                                <p> {{ type }} </p>
+                            <br>
                         </div>
                     </div>
-
-                    <div class="content">
-                            <p>{{ description }} </p>
-                            <p>{{ email }} </p>
-                            <p>{{ schedule }} </p>
-                            <a :href="url">{{ url }}</a>
-                            <p> {{ type }} </p>
-                        <br>
-                    </div>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
 </template>

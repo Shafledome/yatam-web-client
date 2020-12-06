@@ -12,8 +12,6 @@
                 <strong>{{ title }}</strong>
               </a>
             </p>
-            <br>
-            <br>
             <b-rate v-model="grade" icon-pack="fas" disabled></b-rate>
             {{ text }}
             

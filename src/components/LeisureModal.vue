@@ -1,7 +1,13 @@
 <template>
     <section>
-        <b-modal v-model="isActive" :width="640" scroll="keep" :can-cancel="false">
+        <b-modal v-model="this.$parent.isActive" :width="640" scroll="keep">
             <div class="card">
+                <header class="modal-card-head">
+                        <button
+                            type="button"
+                            class="delete"
+                            @click="$emit('close')"/>
+                </header>
                 <div class="card-image">
                     <!-- <figure class="image is-4by3">
                         <img src="/static/img/placeholder-1280x960.png" alt="Image">
