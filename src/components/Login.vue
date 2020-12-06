@@ -73,8 +73,7 @@
                         router.push({ name: 'home', params: {key: this.userKey}})
                     } else {
                         this.error = true;
-                }
-                 }, 200);
+                }}, 750);
                 
             },
 

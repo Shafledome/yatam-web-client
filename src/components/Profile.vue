@@ -1,9 +1,12 @@
 <template>
   <div class="profile">
+    <Navbar v-bind:userKey="key"/>
+    <Hero/>
     <div class="user-data" style="text-align:center; background: #ffffff;">
-        <h1 class="title is-1" style="color:#0a1b15;  padding: 70px 0;">{{ values.username }}</h1>
+        <h1 class="title is-1" style="color:#0a1b15; 
+                                      padding-top: 20px; padding-bottom: 30px;">{{ values.username }}</h1>
     </div>
-    <div class="columns" style="background:#0a1b15;">
+    <div class="columns" style="background:#0a1b15; padding-top: 10px;">
         <div class="column is-one-fifth"></div>
         <div class="column is-one-fifth">
             <!-- <p class="title is-4" style="color:#04c970;">Trophies</p> -->
@@ -16,6 +19,7 @@
         </div>
         <div class="column is-one-fifth"></div>
     </div>
+    <Footer />
   </div>
 </template>
 
@@ -23,12 +27,18 @@
 import axios from "axios";
 import TrophyList from './TrophyList'
 import RatingsList from './RatingsList'
+import Footer from './Footer.vue'
+import Navbar from './Navbar.vue'
+import Hero from './Hero.vue'
 
 export default {
   name: "Profile",
   components: {
     TrophyList,
-    RatingsList
+    RatingsList,
+    Footer,
+    Hero,
+    Navbar
   },
   props: {
       email: String
