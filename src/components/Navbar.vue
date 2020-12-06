@@ -20,7 +20,7 @@
             <b-navbar-item>
                 <b-button v-on:click="showHome()" class ="button" type="is-dark" outlined>
                     <span class="icon is-small" style="margin-right: 5px;">
-                        <!--<i class="fab fa-home"></i>-->
+                        <i class="fas fa-home"></i>
                     </span>
                     Home
                 </b-button>
@@ -46,6 +46,7 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faHome } from '@fortawesome/free-solid-svg-icons'
 import { dom } from '@fortawesome/fontawesome-svg-core'
 import CurrentWeather from "./CurrentWeather"
 import {router} from '../main.js'
@@ -54,6 +55,7 @@ dom.watch()
 
 library.add(faUser)
 library.add(faGithub)
+library.add(faHome)
 
 export default {
     name: "NavBar",
