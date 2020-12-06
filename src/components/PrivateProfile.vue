@@ -1,6 +1,6 @@
 <template>
     <div class="View">
-        <Navbar v-bind:userKey="key"/>
+        <Navbar v-bind:userKey="key" v-bind:priv="true"/>
         <Hero/>
         <section>
             <div class="columns" style="background:#0a1b15;">

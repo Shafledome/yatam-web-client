@@ -31,12 +31,22 @@
               <CurrentWeather />
             </b-navbar-item>
             <b-navbar-item>
-                <b-button v-on:click="showPrivate()" class ="button" type="is-dark" outlined>
-                    <span class="icon is-small" style="margin-right: 5px;">
-                        <i class="fas fa-sm fa-user"></i>
-                    </span>
-                    My Profile
-                </b-button>
+                <div v-if="priv">
+                    <b-button v-on:click="showPrivate()" class ="button" type="is-dark" outlined disabled>
+                        <span class="icon is-small" style="margin-right: 5px;">
+                            <i class="fas fa-sm fa-user"></i>
+                        </span>
+                        My Profile
+                    </b-button>
+                </div>
+                <div v-else>
+                    <b-button v-on:click="showPrivate()" class ="button" type="is-dark" outlined>
+                        <span class="icon is-small" style="margin-right: 5px;">
+                            <i class="fas fa-sm fa-user"></i>
+                        </span>
+                        My Profile
+                    </b-button>
+                </div>
             </b-navbar-item>
         </template>
     </b-navbar>
@@ -61,7 +71,8 @@ export default {
     name: "NavBar",
     components: {CurrentWeather},
     props: {
-        userKey: String
+        userKey: String,
+        priv: Boolean
     },
     methods: {
         showPrivate(){
