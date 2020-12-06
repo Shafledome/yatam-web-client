@@ -3,13 +3,11 @@
     <Navbar />
     <Hero />
     <Tabs />
-    <!-- <Map /> -->
     <Footer />
   </div>
 </template>
 
 <script>
-// import Map from './components/Map.vue'
 import Footer from './components/Footer.vue'
 import Hero from './components/Hero.vue'
 import Navbar from './components/Navbar.vue'
@@ -18,7 +16,6 @@ import Tabs from './components/Tabs.vue'
 export default {
   name: 'App',
   components: {
-    // Map,
     Footer,
     Hero,
     Navbar,
