@@ -64,13 +64,18 @@
                 var url = 'http://127.0.0.1:30006/users/username/';
                 axios
                 .get(url + this.username)
-                .then(response => (this.dict = response.data, this.usernameData = Object.values(this.dict)[0].username, this.passwordData = Object.values(this.dict)[0].password));
-                this.userKey = Object.keys(this.dict)[0];
-                if(this.password == this.passwordData ) {
-                    router.push({ name: 'home', params: {key: this.userKey}})
-                } else {
-                    this.error = true;
+                .then(response => (this.dict = response.data,
+                                   this.usernameData = Object.values(this.dict)[0].username, 
+                                   this.passwordData = Object.values(this.dict)[0].password,
+                                   this.userKey = Object.keys(this.dict)[0]));
+                setTimeout(() => { 
+                    if(this.password == this.passwordData ) {
+                        router.push({ name: 'home', params: {key: this.userKey}})
+                    } else {
+                        this.error = true;
                 }
+                 }, 200);
+                
             },
 
             activateRegister() {
