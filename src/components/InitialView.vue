@@ -1,17 +1,26 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <Navbar />
+    <Hero />
+    <Login />
+    <Footer />
   </div>
 </template>
 
 <script>
-import {router} from './main.js'
+import Login from './Login.vue'
+import Navbar from './Navbar.vue'
+import Footer from './Footer.vue'
+import Hero from './Hero.vue'
 
 export default {
-  name: 'App',
-  mounted() {
-    router.push({name: 'initialView'})
-  }
+    name: 'App',
+    components: {
+        Footer,
+        Hero,
+        Navbar,
+        Login
+    }
 };
 </script>
 
@@ -42,5 +51,4 @@ export default {
 
   @import "~bulma";
   @import "~buefy/src/scss/buefy";
-  
 </style>

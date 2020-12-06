@@ -5,7 +5,7 @@ import VueParticles from 'vue-particles';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VueRouter from 'vue-router'
 import Home from './components/Home.vue'
-import Login from './components/Login.vue'
+import InitialView from './components/InitialView.vue'
 import PrivateProfile from './components/PrivateProfile.vue'
 
 export {router}
@@ -22,8 +22,8 @@ Vue.config.productionTip = false
 const router = new VueRouter({
   mode: 'history',
   routes: [
-      { path: '/home/',name: 'home', component: Home },
-      { path: '/login/',name: 'login', component: Login },
+      { path: '/home/:key',name: 'home', component: Home, props: true},
+      { path: '/initialView/',name: 'initialView', component: InitialView },
       { path: '/private/:key',name: 'private', component: PrivateProfile, props: true}
   ]
 })

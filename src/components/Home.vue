@@ -20,6 +20,10 @@ export default {
         Hero,
         Navbar,
         Tabs
+    },
+
+    props: {
+      userKey: String,
     }
 };
 </script>
