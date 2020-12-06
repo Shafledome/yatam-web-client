@@ -1,6 +1,7 @@
 <template>
     <section>
-        <div class="columns is-centered">
+        <div class="columns is-centered" style="padding-top: 0%;
+        padding-bottom: 0%;">
             <div class="column is-half">
                 <b-collapse class="card" animation="slide" aria-id="contentIdForA11y3" :open="false">
                     <div

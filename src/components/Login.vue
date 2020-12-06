@@ -15,12 +15,12 @@
       </form>
         <p v-if="error" class="error">Has introducido mal el usuario o la contraseña.</p>
     </div>
-    
 </div>
 </template>
 
 <script>
     import axios from "axios";
+    import {router} from '../main.js'
 
     export default {
         name: 'Login',
@@ -47,6 +47,7 @@
                 //To-Do: what happens when you log in?
                 } else {
                     this.error = false;
+                    router.push({ name: 'home'})
                 }
             }
         }

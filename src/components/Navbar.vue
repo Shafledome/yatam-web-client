@@ -22,12 +22,12 @@
             <b-navbar-item>
               <CurrentWeather />
             </b-navbar-item>
-            <b-navbar-item href="#MyProfile">
+            <b-navbar-item>
                 <b-button class ="button" type="is-dark" outlined>
                     <span class="icon is-small" style="margin-right: 5px;">
                         <i class="fas fa-sm fa-user"></i>
                     </span>
-                    MyProfile
+                    <router-link to="/login/">My Profile</router-link>
                 </b-button>
             </b-navbar-item>
         </template>
@@ -48,7 +48,7 @@ library.add(faGithub)
 
     export default {
         name: "NavBar",
-      components: {CurrentWeather}
+        components: {CurrentWeather}
     }
 </script>
 

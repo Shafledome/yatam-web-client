@@ -6,7 +6,7 @@
                     
                         <p class="title is-4"> {{ name }} </p>
                     
-                        <p class="subtitle is-6"> {{ event }} </p>
+                        <!-- <p class="subtitle is-6"> {{ event }} </p> -->
                     
                 </div>
             </div>
@@ -17,7 +17,7 @@
                 
                     <p>{{ type }} </p>
 
-                    <p>{{ recipient }} </p>
+                    <!-- <p>{{ recipient }} </p>-->
                 
                     <p>{{ email }} </p>
                 

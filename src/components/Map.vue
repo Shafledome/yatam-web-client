@@ -1,5 +1,4 @@
 <template>
-
   <div class="map">
     <l-map
       :zoom="zoom"
@@ -17,7 +16,7 @@
       :icon="iconMuseum"
       >
         <l-popup>
-          <div @click="innerClick">
+          <div @click="openModal(museum.id, 'museum')">            
             {{museum.name}}
           </div>
         </l-popup>
@@ -113,8 +112,7 @@
           </div>
         </l-popup>
       </l-marker>
-
-    </l-map>
+    </l-map>    
   </div>
 </template>
 
@@ -123,13 +121,14 @@ import { latLng, icon } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import axios from "axios";
 import { LMap, LTileLayer, LMarker, LPopup } from "vue2-leaflet";
+
 export default {
   name: "Map",
   components: {
     LMap,
     LTileLayer,
     LMarker,
-    LPopup,
+    LPopup
   },
   data() {
     return {
@@ -143,50 +142,50 @@ export default {
       iconMuseum: icon({
         iconUrl: require("../assets/museum.svg"),
         iconSize: [20, 21],
-        iconAnchor: [37, 17]
+        iconAnchor: [10, 21]
       }),
       artGallery: null,
       iconArtGallery: icon({
         iconUrl: require("../assets/artGallery.svg"),
         iconSize: [20, 21],
-        iconAnchor: [37, 17]
+        iconAnchor: [10, 21]
       }),
       dogPark: null,
       iconDogPark: icon({
         iconUrl: require("../assets/dogPark.svg"),
         iconSize: [20, 21],
-        iconAnchor: [37, 17]
+        iconAnchor: [10, 21]
       }),
       monument: null,
       iconMonument: icon({
         iconUrl: require("../assets/monument.svg"),
         iconSize: [20, 21],
-        iconAnchor: [37, 17]
+        iconAnchor: [10, 21]
       }),
       training: null,
       iconTraining: icon({
         iconUrl: require("../assets/training.svg"),
         iconSize: [20, 21],
-        iconAnchor: [37, 17]
+        iconAnchor: [10, 21]
       }),
       library: null,
       iconLibrary: icon({
         iconUrl: require("../assets/library.svg"),
         iconSize: [20, 21],
-        iconAnchor: [37, 17]
+        iconAnchor: [10, 21]
       }),
       cinema: null,
       iconCinema: icon({
         iconUrl: require("../assets/cinema.svg"),
         iconSize: [20, 21],
-        iconAnchor: [37, 17]
+        iconAnchor: [10, 21]
       }),
       theater: null,
       iconTheater: icon({
         iconUrl: require("../assets/theater.svg"),
         iconSize: [20, 21],
-        iconAnchor: [37, 17]
-      }),
+        iconAnchor: [10, 21]
+      })
     };
   },
   mounted() {
@@ -215,7 +214,7 @@ export default {
     },
     innerClick() {
       alert("Click!");
-    },
+    }
   },
   created(){
     axios
@@ -249,14 +248,16 @@ export default {
         .get('http://127.0.0.1:30007/leisures/theater')
         .then(response => (this.theater = response.data))
   }
-
 };
 </script>
 
 
 <style>
-.map{
-  height: 500px;
-  width: 100%;
-}
+  .map{
+    height: 500px;
+    width: 80%;
+    padding-top: -2%;
+    padding-left: 20%;
+    padding-bottom: 2%;
+  }
 </style>
