@@ -16,7 +16,7 @@
       :icon="iconMuseum"
       >
         <l-popup>
-          <div @click="openModal(museum.id, 'museum')">            
+          <div @click="innerClick">            
             {{museum.name}}
           </div>
         </l-popup>
