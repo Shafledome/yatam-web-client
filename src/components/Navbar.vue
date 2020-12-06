@@ -23,7 +23,7 @@
               <CurrentWeather />
             </b-navbar-item>
             <b-navbar-item>
-                <b-button v-on:click="showPrivate" class ="button" type="is-dark" outlined>
+                <b-button v-on:click="showPrivate()" class ="button" type="is-dark" outlined>
                     <span class="icon is-small" style="margin-right: 5px;">
                         <i class="fas fa-sm fa-user"></i>
                     </span>
@@ -49,9 +49,12 @@ library.add(faGithub)
 export default {
     name: "NavBar",
     components: {CurrentWeather},
+    props: {
+        userKey: String
+    },
     methods: {
         showPrivate(){
-            router.push({ name: 'private', params: { key: '-MMrFIxsvyD4yYS-q1wH' }})
+            router.push({ name: 'private', params: { key: this.userKey }})
         }
     }
 }

@@ -6,12 +6,10 @@
     <div class="columns" style="background:#0a1b15;">
         <div class="column is-one-fifth"></div>
         <div class="column is-one-fifth">
-            <br>
             <!-- <p class="title is-4" style="color:#04c970;">Trophies</p> -->
             <TrophyList v-bind:user="key"></TrophyList> 
         </div>
         <div class="column">
-            <br>
             <!-- <h3 class="title is-4" style="color:#04c970">Reviews</h3> -->
             <RatingsList v-bind:data="key"
                         v-bind:user=true></RatingsList>
@@ -32,6 +30,9 @@ export default {
     TrophyList,
     RatingsList
   },
+  props: {
+      email: String
+  },
   data() {
     return {
       user: null,
@@ -43,7 +44,7 @@ export default {
   },
   mounted() {
     axios
-    .get('http://127.0.0.1:30006/users/email/mariano@gmail.com')
+    .get('http://127.0.0.1:30006/users/email/' + this.email)
     .then(response => (this.user = response.data, 
                        this.key = Object.keys(this.user)[0],
                        this.values = Object.values(this.user)[0]))

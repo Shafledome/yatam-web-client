@@ -4,13 +4,14 @@
       <article class="media">
         <div class="media-content">
           <div class="content">
-            <p>
+            <a v-on:click="viewProfile()" >
               <strong>{{ title }}</strong> <!--<small>{{leisure}}</small>-->
-              <br>
-              <br>
-              <b-rate v-model="grade" icon-pack="fas" disabled="true"></b-rate>
-              {{ text }}
-            </p>
+            </a>
+            <br>
+            <br>
+            <b-rate v-model="grade" icon-pack="fas" disabled></b-rate>
+            {{ text }}
+            
           </div>
         </div>
       </article>
@@ -24,6 +25,7 @@ import axios from "axios";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { dom } from '@fortawesome/fontawesome-svg-core'
+import {router} from '../main.js'
 
 dom.watch()
 
@@ -33,27 +35,43 @@ export default {
   name: "RatingPreview",
   props: {
       user: String,
-      leisure: String,
+      leisure: Number,
       grade: Number,
       text: String,
       bool: Boolean
   },
   data() {
       return {
-        title : null
+        title : null,
+        email : null,
+        leisureObject : null
       }
   },
   mounted() {
     if(this.bool == true){
       axios
       .get('http://127.0.0.1:30007/leisures/id/' + this.leisure)
-      .then(response => (this.title = response.data.name))
+      .then(response => (this.title = response.data.name,
+                         this.leisureObject = response.data))
     }else{
       axios
       .get('http://127.0.0.1:30006/users/user_key/' + this.user)
-      .then(response => (this.title = response.data.username))
+      .then(response => (this.title = response.data.username,
+                         this.email = response.data.email))
     }
-
+  },
+  methods:{
+    viewProfile(){
+      if(this.bool == true){
+        router.push({ name: 'leisure', 
+                      params: { isActive: true, id : this.leisure , address : this.leisureObject.address,
+                      type : this.leisureObject.type, description : this.leisureObject.description,
+                      email : this.leisureObject.email, schedule : this.leisureObject.schedule,
+                      url : this.leisureObject.leisure}})
+      }else{
+        router.push({ name: 'profile', params: { email: this.email }})
+      }
+    }
   }
 };
 </script>

@@ -60,11 +60,11 @@ export default {
         saveChanges(){
             axios
             .put('http://127.0.0.1:30006/users/update/user/username',
-            {user: '-MMrFIxsvyD4yYS-q1wH', username: this.username});
+            {user: this.key, username: this.username});
 
             axios
             .put('http://127.0.0.1:30006/users/update/user/password',
-            {user: '-MMrFIxsvyD4yYS-q1wH', password: this.password}).then((result) => {
+            {user: this.key, password: this.password}).then((result) => {
                 console.log(result);
             })
             this.edit = !this.edit
