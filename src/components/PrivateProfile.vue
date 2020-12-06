@@ -1,52 +1,65 @@
 <template>
-    <section>
-        <div class="columns" style="background:#0a1b15;">
-            <div div class="column is-one-fifth" />
-            <div class="column" v-if="!edit">
-                <h1 class="title is-4" style="color:#04c970;">My Profile</h1><br>
-                <h2 class="title is-5" style="color:#fff;">Email</h2>
-                <b-field>
-                    <b-input v-model="mail" disabled></b-input>
-                </b-field><br>
+    <div class="View">
+        <Navbar v-bind:userKey="key"/>
+        <Hero/>
+        <section>
+            <div class="columns" style="background:#0a1b15;">
+                <div div class="column is-one-fifth" />
+                <div class="column" v-if="!edit">
+                    <h1 class="title is-4" style="color:#04c970;">My Profile</h1><br>
+                    <h2 class="title is-5" style="color:#fff;">Email</h2>
+                    <b-field>
+                        <b-input v-model="mail" disabled></b-input>
+                    </b-field><br>
 
-                <h2 class="title is-5" style="color:#fff;">Username</h2>
-                <b-field>
-                    <b-input v-model="username" disabled></b-input>
-                </b-field><br>
+                    <h2 class="title is-5" style="color:#fff;">Username</h2>
+                    <b-field>
+                        <b-input v-model="username" disabled></b-input>
+                    </b-field><br>
 
-                <b-button @click="changeToEdit" style="float:right">Editar</b-button><br><br>
+                    <b-button @click="changeToEdit" style="float:right">Editar</b-button><br><br>
+                </div>
+                <div class ="column" v-else>
+                    <h1 class="title is-4" style="color:#04c970;">My Profile</h1><br>
+                    <h2 class="title is-5" style="color:#fff;">Email</h2>
+                    <b-field>
+                        <b-input v-model="mail" disabled></b-input>
+                    </b-field><br>
+
+                    <h2 class="title is-5" style="color:#fff;">Username</h2>
+                    <b-field>
+                        <b-input v-model="username"></b-input>
+                    </b-field><br>
+
+                    <h2 class="title is-5" style="color:#fff;">Password</h2>
+                    <b-field>
+                        <b-input v-model="password"></b-input>
+                    </b-field><br>
+
+                    <b-button @click="saveChanges" style="float:right">Guardar cambios</b-button><br><br>
+                </div>
+                <div div class="column is-one-fifth"/>
             </div>
-            <div class ="column" v-else>
-                <h1 class="title is-4" style="color:#04c970;">My Profile</h1><br>
-                <h2 class="title is-5" style="color:#fff;">Email</h2>
-                <b-field>
-                    <b-input v-model="mail" disabled></b-input>
-                </b-field><br>
-
-                <h2 class="title is-5" style="color:#fff;">Username</h2>
-                <b-field>
-                    <b-input v-model="username"></b-input>
-                </b-field><br>
-
-                <h2 class="title is-5" style="color:#fff;">Password</h2>
-                <b-field>
-                    <b-input v-model="password"></b-input>
-                </b-field><br>
-
-                <b-button @click="saveChanges" style="float:right">Guardar cambios</b-button><br><br>
-            </div>
-            <div div class="column is-one-fifth"/>
-        </div>
-    </section>
+        </section>
+        <Footer />
+    </div>
 </template>
 
 <script>
-import axios from "axios";
+import axios from "axios"
+import Footer from './Footer.vue'
+import Navbar from './Navbar.vue'
+import Hero from './Hero.vue'
 
 export default {
     name: 'private',
     props: {
         key: String
+    },
+    components: {
+        Footer,
+        Hero,
+        Navbar
     },
     data() {
         return {

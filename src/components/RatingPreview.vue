@@ -4,9 +4,14 @@
       <article class="media">
         <div class="media-content">
           <div class="content">
-            <a v-on:click="viewProfile()" >
-              <strong>{{ title }}</strong> <!--<small>{{leisure}}</small>-->
-            </a>
+            <p v-if="bool">
+              <strong>{{ title }}</strong>
+            </p>
+            <p v-else>
+              <a v-on:click="viewProfile()" >
+                <strong>{{ title }}</strong>
+              </a>
+            </p>
             <br>
             <br>
             <b-rate v-model="grade" icon-pack="fas" disabled></b-rate>
@@ -44,7 +49,8 @@ export default {
       return {
         title : null,
         email : null,
-        leisureObject : null
+        leisureObject : null,
+        isActive: false
       }
   },
   mounted() {
@@ -62,16 +68,8 @@ export default {
   },
   methods:{
     viewProfile(){
-      if(this.bool == true){
-        router.push({ name: 'leisure', 
-                      params: { isActive: true, id : this.leisure , address : this.leisureObject.address,
-                      type : this.leisureObject.type, description : this.leisureObject.description,
-                      email : this.leisureObject.email, schedule : this.leisureObject.schedule,
-                      url : this.leisureObject.leisure}})
-      }else{
-        router.push({ name: 'profile', params: { email: this.email }})
-      }
-    }
+      router.push({ name: 'profile', params: { email: this.email }})
+    },
   }
 };
 </script>

@@ -17,6 +17,14 @@
                     Server
                 </b-button>
             </b-navbar-item>
+            <b-navbar-item>
+                <b-button v-on:click="showHome()" class ="button" type="is-dark" outlined>
+                    <span class="icon is-small" style="margin-right: 5px;">
+                        <!--<i class="fab fa-home"></i>-->
+                    </span>
+                    Home
+                </b-button>
+            </b-navbar-item>
         </template>
         <template slot="end">
             <b-navbar-item>
@@ -27,6 +35,7 @@
                     <span class="icon is-small" style="margin-right: 5px;">
                         <i class="fas fa-sm fa-user"></i>
                     </span>
+                    My Profile
                 </b-button>
             </b-navbar-item>
         </template>
@@ -55,6 +64,9 @@ export default {
     methods: {
         showPrivate(){
             router.push({ name: 'private', params: { key: this.userKey }})
+        },
+        showHome(){
+            router.push({ name: 'home', params: { key: this.userKey }})
         }
     }
 }

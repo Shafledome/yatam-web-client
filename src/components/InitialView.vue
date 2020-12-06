@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <Navbar />
     <Hero />
     <Login />
     <Footer />
@@ -9,7 +8,6 @@
 
 <script>
 import Login from './Login.vue'
-import Navbar from './Navbar.vue'
 import Footer from './Footer.vue'
 import Hero from './Hero.vue'
 
@@ -18,7 +16,6 @@ export default {
     components: {
         Footer,
         Hero,
-        Navbar,
         Login
     }
 };

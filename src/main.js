@@ -8,7 +8,7 @@ import Home from './components/Home.vue'
 import InitialView from './components/InitialView.vue'
 import PrivateProfile from './components/PrivateProfile.vue'
 import Profile from './components/Profile.vue'
-import LeisureModal from './components/LeisureModal.vue'
+//import LeisureModal from './components/LeisureModal.vue'
 
 export {router}
 
@@ -24,11 +24,11 @@ Vue.config.productionTip = false
 const router = new VueRouter({
   mode: 'history',
   routes: [
-      { path: '/home/:key',name: 'home', component: Home, props: true},
-      { path: '/initialView/',name: 'initialView', component: InitialView },
-      { path: '/private/:key',name: 'private', component: PrivateProfile, props: true},
-      { path: '/profile/:email',name: 'profile', component: Profile, props: true},
-      { path: '/leisure', name: 'leisure', component: LeisureModal, props: true}
+      { path: '/home',name: 'home', component: Home, props: true},
+      { path: '/main',name: 'initialView', component: InitialView },
+      { path: '/private',name: 'private', component: PrivateProfile, props: true},
+      { path: '/profile',name: 'profile', component: Profile, props: true},
+      //{ path: '/leisure', name: 'leisure', component: LeisureModal, props: true}
 
   ]
 })
