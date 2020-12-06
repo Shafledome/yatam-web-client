@@ -46,7 +46,7 @@ App.vue and main.js are the main files of the project. Other files are located i
 Sometimes *npm* can cause problems... This is due to some possible incompatibilities between dependencies, so these are some of the possible solutions when npm fails:
 
 * Restart the terminal or the computer if you installed a new package.
-* Use *nvm* to change/install different Node.js versions. Some packages are incompatible with new node.js versions or hasn't been updated like node-sass (stylesheet preprocessor)
+* Use *nvm* to change/install different Node.js versions. Some packages are incompatible with new node.js versions or hasn't been updated.
 * Delete node_modules folder inside a project and use:
 	```
 	npm i
