@@ -1,25 +1,16 @@
 <template>
   <div id="app">
-    <Navbar />
-    <Hero />
-    <Tabs />
-    <Footer />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Footer from './components/Footer.vue'
-import Hero from './components/Hero.vue'
-import Navbar from './components/Navbar.vue'
-import Tabs from './components/Tabs.vue'
+import {router} from './main.js'
 
 export default {
   name: 'App',
-  components: {
-    Footer,
-    Hero,
-    Navbar,
-    Tabs
+  mounted() {
+    router.push({name: 'login'})
   }
 };
 </script>
