@@ -94,3 +94,7 @@ This error is common since React/Angular/Vue hot-reloads and recompiles files on
 	sudo sysctl -p
 	```
 	And now you can use npm run serve again.
+
+## How to run Climacell Weather API
+
+In CurrentWeather.vue, in the <script> part, uncomment the lines in mounted() and change all the variables inside data() return{} to null. This is to avoid reaching the daily limit of 1000 API calls when testing.
