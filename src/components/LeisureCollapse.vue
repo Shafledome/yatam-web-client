@@ -61,6 +61,7 @@
                                 v-bind:email="leisure.email"
                                 v-bind:schedule="leisure.schedule"
                                 v-bind:url="leisure.url"
+                                v-bind:userKey="userKey"
                             ></LeisurePreview>
                         </div>
                     </div>
@@ -80,7 +81,8 @@ export default {
         LeisurePreview
     },
     props: {
-        typeLeisure: String
+        typeLeisure: String,
+        userKey: String
     },
     data() {
         return {

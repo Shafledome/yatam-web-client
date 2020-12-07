@@ -9,6 +9,7 @@
                     v-bind:email="email"
                     v-bind:schedule="schedule"
                     v-bind:url="url"
+                    v-bind:userKey="userKey"
                     @close="isActive = false"
                     />
         <div class="card">
@@ -59,7 +60,8 @@ export default {
         description: String,
         email: String,
         schedule: String,
-        url: String
+        url: String,
+        userKey: String
     },
     methods: {
         openModal: function() {

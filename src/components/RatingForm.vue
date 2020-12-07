@@ -1,15 +1,21 @@
 <template>
   <section>
-    <div class="rating-form">
+      <div class="box">
+        <div class="rating-form">
 
-      <b-rate v-model="grade" icon-pack="fas"></b-rate>
+          <b-rate v-model="grade" icon-pack="fas"></b-rate>
 
-      <b-field label="Text">
-        <b-input v-model="text"></b-input>
-      </b-field>
+          <b-field label="Text">
+            <b-input v-model="text"></b-input>
+          </b-field>
 
-      <button @click="createRating">Submit rating</button>
-    </div>
+          <button
+                class="button is-primary"
+                @click="createRating">Create Review</button>
+          <br>
+          <br>
+        </div>
+      </div>
   </section>
 </template>
 
@@ -27,8 +33,8 @@ library.add(faStar)
 export default {
   name: "RatingForm",
   props: {
-    user: String,
-    leisure: String
+    leisure: String,
+    userKey: String
   },
   data() {
     return {
@@ -40,7 +46,7 @@ export default {
     createRating() {
       axios
           .post('http://127.0.0.1:30006/ratings/create/rating',
-              {user: this.user, leisure: this.leisure, grade: this.grade, text: this.text})
+              {user: this.userKey, leisure: this.leisure, grade: this.grade, text: this.text})
     }
   }
 }

@@ -2,7 +2,7 @@
   <div id="app">
     <Navbar v-bind:userKey="id"/>
     <Hero />
-    <Tabs />
+    <Tabs v-bind:userKey="id"/>
     <Footer />
   </div>
 </template>
@@ -24,8 +24,9 @@ export default {
 
     props: {
       id: String,
-    }
+    },
 };
+
 </script>
 
 <style lang="scss">

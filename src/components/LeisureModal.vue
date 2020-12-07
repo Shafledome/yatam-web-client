@@ -34,6 +34,9 @@
                         <a :href="url">{{ url }} </a>
                         <br>
                         <small> {{ type }} </small>
+                        <br>
+                        <RatingForm v-bind:leisure="id" v-bind:userKey="userKey"/>
+                        <br>
                         <RatingsList v-bind:data="null"
                                 v-bind:user="false"
                                 v-bind:idLeisure="id" />
@@ -46,8 +49,10 @@
 
 <script>
 import RatingsList from './RatingsList.vue'
+import RatingForm from "./RatingForm";
 
     export default {
+
         props: {
             isActive: Boolean,
             id: Number,
@@ -57,10 +62,12 @@ import RatingsList from './RatingsList.vue'
             description: String,
             email: String,
             schedule: String,
-            url: String
+            url: String,
+            userKey: String
         },
         components: {
-            RatingsList
-        }
+          RatingForm,
+          RatingsList,
+        },
     }
 </script>

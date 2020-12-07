@@ -3,7 +3,7 @@
         <section>
             <b-tabs position="is-left" class="block" v-model="selection">
                 <b-tab-item label="Leisures" :value='"1"'>
-                    <component :is="dynamicComponent" v-if="selection == '1'"/>
+                    <component :is="dynamicComponent" v-if="selection == '1'" v-bind:userKey="userKey"/>
                 </b-tab-item>
                 <b-tab-item label="Map" :value='"2"'>
                     <component :is="dynamicComponent" v-if="selection == '2'"/>
@@ -45,7 +45,10 @@
                     return this.events;
                 }
             }
-        }
+        },
+      props: {
+        userKey: String,
+      }
     }
 </script>
 
