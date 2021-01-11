@@ -10,7 +10,10 @@
                 </b-tab-item>
                 <b-tab-item label="Events 2020" :value='"3"'>
                     <component :is="dynamicComponent" v-if="selection == '3'"/>
-                </b-tab-item>                
+                </b-tab-item>
+                <b-tab-item label="Trophies" :value='"4"'>
+                    <component :is="dynamicComponent" v-if="selection == '4'"/>
+                </b-tab-item>                       
             </b-tabs>            
         </section>
     </div>
@@ -20,6 +23,7 @@
     import LeisuresList from'./LeisuresList.vue'
     import Map from "./Map.vue";
     import EventsList from './EventsList.vue'
+    import Trophies from './Trophies.vue'
 
     export default {
         data() {
@@ -27,13 +31,15 @@
                 leisures: LeisuresList,
                 map: Map,
                 events: EventsList,
+                trophies: Trophies,
                 selection: "1"
             }
         },
         components: {
             LeisuresList,
             Map,
-            EventsList
+            EventsList,
+            Trophies
         },
         computed: {
             dynamicComponent() {
@@ -41,8 +47,10 @@
                     return this.leisures;
                 } else if (this.selection == "2") {
                     return this.map;
-                } else {
+                } else if (this.selection == "3") {
                     return this.events;
+                } else {
+                    return this.trophies
                 }
             }
         },
